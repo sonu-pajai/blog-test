@@ -1,0 +1,29 @@
+<h3> BLog Details</h3>
+<p id="notice"><%= notice %></p>
+
+<p style="color:#000">
+  <b>BLog Image:</b><br/>
+ <img src ="<%=@blog.image.url rescue ''%>" width="100" height="100">
+<p>
+<p style="color:#000">
+  <b>Title:</b>
+  <%= @blog.title %>
+</p>
+<p>
+  <b>Short description:</b>
+  <%= @blog.short_description %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @blog.description.html_safe rescue '' %>
+</p>
+
+<p>
+  <b>Published on:</b>
+  <%= @blog.published_on %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

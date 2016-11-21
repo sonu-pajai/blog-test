@@ -1,0 +1,41 @@
+<style>
+.blog_detail{
+	color: #2ca0d6;
+	font-size: 16px;
+    line-height: 26px;
+
+}
+.blog-title{
+	margin-top: 0px;
+    font-size: 25px;
+    color: #2ca0d6;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+
+</style>
+<div class="col-md-12">
+	<div class="row">
+        <div class="col-sm-12 col-md-12 ">   
+      		<div class="blog-title"><%=@blog.title.capitalize%> </div>
+      	</div>
+    </div> 
+   	<div class="row">
+        <div class="col-sm-12 text-center">   
+        <img src="<%=@blog.image.url rescue ''%>" style="max-width:100%">
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-sm-12 ">   
+        	<div class="blog_detail">Updated on <%=@blog.updated_at.in_time_zone('Chennai').strftime(" %B %d , %Y")%>
+			&nbsp;|&nbsp; 
+			Views: ( <%=@blog.pagevisits%> ) 	 </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-sm-12 ">   
+        <p><%=@blog.description.html_safe%> </p>
+        </div>
+    </div>  
+
+</div>

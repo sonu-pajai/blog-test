@@ -1,0 +1,69 @@
+<script>
+
+
+  jQuery(document).ready(function($){
+    $(".well").validate();
+      // $("#doctor_detail_image").rules('add', {
+      //   accept:"jpg,png,jpeg,gif"      
+      // });
+  });
+
+</script>
+<style>
+.mceLayout{
+  width:100% !important;
+}
+</style>
+
+
+
+
+ <%= form_for @blog, :html => {:class => 'well',:multipart=>true} do |f|%>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <ul>
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :BlogTitle %> : 
+    <%= f.text_field :title, :class => "form-control required" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :published_on %>: 
+    <%= f.date_select :published_on , :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :short_description %>:
+    <%= f.text_field :short_description , :class => "form-control" %>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :class => "mceEditor" %>
+  </div>
+   <div class="form-group">
+      <% if params[:action]=="edit" %>
+        <%= f.file_field :image , :class => "form-control" %> 
+      <% else %>
+        <%= f.file_field :image , :class => "form-control required" %> 
+      <% end %>
+    </div>
+
+  <div class="form-group">
+      <%= f.submit "Save" , :class => "btn btn-primary" %>
+
+<%= link_to 'Back', blogs_path , :class => "btn btn-default"%>
+
+  </div>
+
+
+
+<% end %>

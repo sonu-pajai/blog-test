@@ -1,0 +1,159 @@
+have_header: checking for ruby/thread.h... -------------------- no
+
+"gcc -E -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC    conftest.c -o conftest.i"
+/usr/lib/ruby/1.8/mkmf.rb:266: warning: Insecure world writable dir /usr/local/sbin in PATH, mode 040777
+conftest.c:1:25: fatal error: ruby/thread.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include <ruby/thread.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_blocking_region()... -------------------- no
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:3:53: error: ‘rb_thread_blocking_region’ undeclared (first use in this function)
+conftest.c:3:53: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+/tmp/ccB1sNFI.o: In function `t':
+/Disk250/disk1/testblog/vendor/bundle/ruby/1.8/gems/mysql2-0.2.24/ext/mysql2/conftest.c:3: undefined reference to `rb_thread_blocking_region'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { rb_thread_blocking_region(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_wait_for_single_fd()... -------------------- no
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:3:53: error: ‘rb_wait_for_single_fd’ undeclared (first use in this function)
+conftest.c:3:53: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+/tmp/cccY4MQJ.o: In function `t':
+/Disk250/disk1/testblog/vendor/bundle/ruby/1.8/gems/mysql2-0.2.24/ext/mysql2/conftest.c:3: undefined reference to `rb_wait_for_single_fd'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { rb_wait_for_single_fd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_hash_dup()... -------------------- no
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:3:53: error: ‘rb_hash_dup’ undeclared (first use in this function)
+conftest.c:3:53: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))rb_hash_dup; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+/tmp/ccgtXKRR.o: In function `t':
+/Disk250/disk1/testblog/vendor/bundle/ruby/1.8/gems/mysql2-0.2.24/ext/mysql2/conftest.c:3: undefined reference to `rb_hash_dup'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { rb_hash_dup(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_intern3()... -------------------- no
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:3:53: error: ‘rb_intern3’ undeclared (first use in this function)
+conftest.c:3:53: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))rb_intern3; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby1.8-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+/tmp/ccolpC52.o: In function `t':
+/Disk250/disk1/testblog/vendor/bundle/ruby/1.8/gems/mysql2-0.2.24/ext/mysql2/conftest.c:3: undefined reference to `rb_intern3'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { rb_intern3(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for mysql.h... -------------------- yes
+
+"gcc -E -I. -I/usr/lib/ruby/1.8/i686-linux -I. -I/usr/include/mysql -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <mysql.h>
+/* end */
+
+--------------------
+
+have_header: checking for errmsg.h... -------------------- yes
+
+"gcc -E -I. -I/usr/lib/ruby/1.8/i686-linux -I. -I/usr/include/mysql -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <errmsg.h>
+/* end */
+
+--------------------
+
+have_header: checking for mysqld_error.h... -------------------- yes
+
+"gcc -E -I. -I/usr/lib/ruby/1.8/i686-linux -I. -I/usr/include/mysql -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <mysqld_error.h>
+/* end */
+
+--------------------
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -I/usr/include/mysql -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic    -L/usr/lib/i386-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl  -lruby1.8-static  -Wall -funroll-loops -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I. -I/usr/lib/ruby/1.8/i686-linux -I. -I/usr/include/mysql -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -fno-strict-aliasing -g -g -O2  -fPIC   -Wall -funroll-loops conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic    -L/usr/lib/i386-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl  -lruby1.8-static  -Wl,-rpath,/usr/lib/i386-linux-gnu -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: int main() {return 0;}
+/* end */
+

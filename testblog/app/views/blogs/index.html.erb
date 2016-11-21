@@ -1,0 +1,40 @@
+
+<div style="display:inline" class="table-responsive">
+
+<h3><%= link_to '', new_blog_path, :class => "btn btn-default fa fa-plus" , :style =>"font-size:16px"%> Listing blogs</h3>
+</div>
+<br class="clear"/>
+<table class="table table-striped table-responsive"  style="width:100%"  cellpadding="10">
+  <tr>
+    <th>Blog Image</th>
+    <th>Blog Title</th>
+    <th>Short Description</th>
+    <th>Published On</th>
+    <th>Added On</th>
+    <th colspan="3">Action</th>   
+  </tr>
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><img src ="<%=blog.image.url rescue ''%>" width="100" height="100"></td>
+      <td style="width:30%"><%= blog.title %></td>
+      <td style="width:36%"><%= blog.short_description %></td>
+      <td style="width:10%"><%= blog.published_on %></td>    
+      <td style="width:15%">
+        <%=blog.created_at.in_time_zone('Chennai').strftime("%d/%m/%y %k:%M %p")%>
+      </td>    
+      <td style="width:3%"> <%=link_to '', blog, :class=>"fa fa-eye" , :title =>"View BLog"%>&nbsp;</td>
+      <td style="width:3%"><%=link_to '', edit_blog_path(blog), :class=>"fa fa-pencil-square-o" , :title =>"Update Blog"%>&nbsp;</td>    
+      <td style="width:3%"><%= link_to '', blog, :confirm => 'Are you sure?', :method => :delete, :class => "fa fa-times-circle destroy", :title =>"Delete Blog"%>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<!-- 
+<div class="digg_pagination" style="float:right">
+    
+    <!%= will_paginate @blogs %>
+  </div>
+ -->
